@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* Palette MOKA — bleu foncé (navy) */
+@theme {
+  --color-moka-50: #f2f5fb;
+  --color-moka-100: #e3e9f5;
+  --color-moka-200: #c9d4ec;
+  --color-moka-300: #a3b3da;
+  --color-moka-400: #7488c2;
+  --color-moka-500: #4c61a5;
+  --color-moka-600: #374a87;
+  --color-moka-700: #2b3a6d;
+  --color-moka-800: #24305a;
+  --color-moka-900: #1f2a4d;
+  --color-moka-950: #131b33;
+}
+
+@keyframes mokaIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 0.1;
+    transform: translateY(0) scale(1);
+  }
+}

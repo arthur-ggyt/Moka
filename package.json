@@ -1,0 +1,73 @@
+{
+  "name": "moka",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "npm run build && electron .",
+    "electron:build": "npm run build && electron-builder --mac"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.0.1",
+    "clsx": "2.1.1",
+    "lucide-react": "^1.59.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "tailwind-merge": "3.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.1.17",
+    "@types/node": "22.19.17",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.1.1",
+    "tailwindcss": "4.1.17",
+    "typescript": "5.9.3",
+    "vite": "7.3.2",
+    "vite-plugin-singlefile": "2.3.0",
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "productName": "MOKA",
+  "description": "MOKA — lecteur et créateur de fichiers .moka",
+  "author": "Arthur",
+  "main": "electron/main.cjs",
+  "build": {
+    "appId": "com.arthur.moka",
+    "productName": "MOKA",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "category": "public.app-category.music",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "fileAssociations": [
+        {
+          "ext": "moka",
+          "name": "Fichier MOKA",
+          "role": "Viewer"
+        }
+      ]
+    }
+  },
+  "allowScripts": {
+    "electron@38.8.6": true,
+    "esbuild@0.27.7": true
+  }
+}
